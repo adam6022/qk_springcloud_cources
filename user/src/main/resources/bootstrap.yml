@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: user
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG
+      profile: config-dev
+    stream:
+      bindings:
+        myMessageOutput:
+          group: user
+          content-type: application/json
+  rabbitmq:
+    host: 172.17.66.44
+    port: 5672
+    username: guest
+    password: guest
+
+eureka: #这里为什么不放在配置中心上？
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
