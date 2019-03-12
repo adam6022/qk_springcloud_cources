@@ -33,7 +33,7 @@ public class UserController {
     @GetMapping("/{id:\\d+}")
     public User findOne(@PathVariable Integer id){
         User user = userService.findOne(id);
-        if (user != null){
+        if (user == null){
             throw new UserException(1, "用户不存在");
         }
         return user;
