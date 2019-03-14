@@ -1,8 +1,10 @@
 package com.qk.user.controller;
 
+import com.qk.user.client.OrderClient;
 import com.qk.user.exception.UserException;
 import com.qk.user.model.User;
 import com.qk.user.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -18,10 +20,14 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
+@Slf4j
 public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private OrderClient orderClient;
 
     @PostMapping("/findAll")
     public Page<User> findAll(@RequestParam(value = "page", defaultValue = "1") Integer page,
@@ -37,5 +43,12 @@ public class UserController {
             throw new UserException(1, "用户不存在");
         }
         return user;
+    }
+
+    @PostMapping("/doPay")
+    public String doPay(String money){
+        log.info("money:{}" ,money);
+        String result = orderClient.doPay(money);
+        return result;
     }
 }

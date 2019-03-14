@@ -7,10 +7,10 @@ spring:
     config:
       server:
         git:
-          uri: https://gitee.com/zgadam/qk_config_repo.git     # ÅäÖÃgit²Ö¿âµÄµØÖ·
-          search-paths: config-repo                             # git²Ö¿âµØÖ·ÏÂµÄÏà¶ÔµØÖ·£¬¿ÉÒÔÅäÖÃ¶à¸ö£¬ÓÃ,·Ö¸î¡£
-          username: Zgadam                                            # git²Ö¿âµÄÕËºÅ
-          password: adam10326231                                            # git²Ö¿âµÄÃÜÂë
+          uri: https://gitee.com/zgadam/qk_config_repo.git     # é…ç½®gitä»“åº“çš„åœ°å€
+          search-paths: config-repo                             # gitä»“åº“åœ°å€ä¸‹çš„ç›¸å¯¹åœ°å€ï¼Œå¯ä»¥é…ç½®å¤šä¸ªï¼Œç”¨,åˆ†å‰²ã€‚
+          username: Zgadam                                            # gitä»“åº“çš„è´¦å·
+          password: adam10326231                                            # gitä»“åº“çš„å¯†ç 
 
   rabbitmq:
     host: 172.17.66.44

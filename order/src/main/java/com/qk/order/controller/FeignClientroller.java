@@ -23,7 +23,7 @@ public class FeignClientroller {
     @GetMapping("/getUserMsg")
     public String getUserMsg(){
         String userMsg = userClient.userMsg();
-        log.info("userMsg:{}", userMsg);
+        log.info("userMsgformFeign:{}", userMsg);
         return userMsg;
     }
 

@@ -12,6 +12,9 @@ spring:
         myMessageOutput:
           group: user
           content-type: application/json
+  sleuth:
+    sampler:
+      probability: 1.0  # 设置抽样采集为100%，默认为0.1，即10%
   rabbitmq:
     host: 172.17.66.44
     port: 5672
@@ -24,4 +27,8 @@ eureka: #这里为什么不放在配置中心上？
       defaultZone: http://localhost:8761/eureka/
   instance:
     prefer-ip-address: true
+
+logging:
+  level:
+    org.springframework.cloud.openfeign: debug
 
